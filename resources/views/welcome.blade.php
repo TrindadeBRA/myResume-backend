@@ -13,7 +13,8 @@
         @vite('resources/css/app.css')
     </head>
     <body class="antialiased">
-        <div id="app">
+        <div id="app">     
+            <dashboard-teste><dashboard-teste/>  
         </div>
         @vite('resources/js/app.js')
     </body>
