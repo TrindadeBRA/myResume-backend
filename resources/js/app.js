@@ -15,11 +15,14 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
 import DashboardTeste from './components/DashboardTeste.vue';
+import Navbar from './components/Navbar.vue';
+import Login from './components/Login.vue';
 
-app.component('example-component', ExampleComponent);
 app.component('dashboard-teste', DashboardTeste);
+app.component('navbar', Navbar);
+app.component('login', Login);
+
 
 /**
  * The following block of code may be used to automatically register your
