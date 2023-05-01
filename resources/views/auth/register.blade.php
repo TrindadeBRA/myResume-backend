@@ -1,7 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+@php
+$registerData = [
+    "paths" => [
+        "main" => url('/'),
+        "logout" => route('logout'),
+        "login" => route('login'),
+        "register" => route('register'),
+        "passwordRequest" => route('password.request'),
+    ],
+    "isLogged" => Auth::check(),
+    "userName" => (Auth::user() ? Auth::user()->name : false),
+    "userEmail" => (Auth::user() ? Auth::user()->email : false),
+    "userId" => (Auth::user() ? Auth::user()->id : false),
+    "error" => ($errors->getMessages() ? $errors->first() : false),
+    "csrfToken" => csrf_token(),
+];
+@endphp
+
+<register :register-data="{{json_encode($registerData)}}"></register>
+
+
+{{-- <div class="container">
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 xl:w-4/12">
             <div class="bg-white rounded-lg shadow-lg">
@@ -58,6 +80,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
 @endsection
     

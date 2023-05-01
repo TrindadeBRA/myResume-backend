@@ -20,7 +20,7 @@
 </head>
 <body>
     <div id="app">
-        @php
+        {{-- @php
             $navbarData = [
                 "paths" => [
                     "main" => url('/'),
@@ -36,7 +36,7 @@
             ];
         @endphp
 
-        <navbar :navbar-data="{{ json_encode($navbarData) }}"></navbar>
+        <navbar :navbar-data="{{ json_encode($navbarData) }}"></navbar> --}}
 
         <main class="">
             @yield('content')

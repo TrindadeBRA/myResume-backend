@@ -1,7 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+@php
+$resetData = [
+    "paths" => [
+        "main" => url('/'),
+        "logout" => route('logout'),
+        "login" => route('login'),
+        "register" => route('register'),
+        "passwordRequest" => route('password.request'),
+        "passwordReset" => route('password.email'),
+    ],
+    "isLogged" => Auth::check(),
+    "userName" => (Auth::user() ? Auth::user()->name : false),
+    "userEmail" => (Auth::user() ? Auth::user()->email : false),
+    "userId" => (Auth::user() ? Auth::user()->id : false),
+    "error" => ($errors->getMessages() ? $errors->first() : false),
+    "csrfToken" => csrf_token(),
+];
+@endphp
+
+<reset-password :reset-data="{{json_encode($resetData)}}"></reset-password>
+
+{{-- <div class="container">
     <div class="flex justify-center">
         <div class="w-3/4">
             <div class="bg-white p-6 rounded-lg">
@@ -35,6 +57,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
 @endsection
     
