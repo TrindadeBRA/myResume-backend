@@ -1,23 +1,25 @@
+@php
+$navbarData = [
+    "paths" => [
+        "main" => url('/'),
+        "logout" => route('logout'),
+        "login" => route('login'),
+        "register" => route('register'),
+    ],
+    "isLogged" => Auth::check(),
+    "userName" => (Auth::user() ? Auth::user()->name : false),
+    "userEmail" => (Auth::user() ? Auth::user()->email : false),
+    "userId" => (Auth::user() ? Auth::user()->id : false),
+    "csrfToken" => csrf_token(),
+];
+@endphp
+
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+    <div class="bg-white">
+        <navbar :navbar-data="{{ json_encode($navbarData) }}"></navbar>
     </div>
-</div>
+
 @endsection
