@@ -34,7 +34,9 @@ class CertificadoController extends Controller
      */
     public function store(Request $request)
     {
-        $certificado = Certificado::create($request->all());
+        $dados = $request->all();
+        $dados["user_id"] = auth()->user()->id;
+        $certificado = Certificado::create($dados);
         return redirect()->route('certificado.show', [$certificado->id]);
     }
 
@@ -43,7 +45,7 @@ class CertificadoController extends Controller
      */
     public function show(Certificado $certificado)
     {
-        dd($certificado->getAttributes());
+        return view('certificado.show', ["certificado" => $certificado]);
     }
 
     /**
