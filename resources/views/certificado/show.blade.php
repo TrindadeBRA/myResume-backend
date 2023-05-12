@@ -3,7 +3,7 @@
 @section('content')
     <header class="bg-gray-700 shadow">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <a href="{{ url()->previous(); }}" class="text-sm font-semibold leading-7 text-gray-300"><span aria-hidden="true">&larr;</span> Back to home</a>
+            <a href="{{ route('certificado.index') }}" class="text-sm font-semibold leading-7 text-gray-300"><span aria-hidden="true">&larr;</span> Certificados</a>
             <h1 class="text-3xl font-bold tracking-tight text-gray-300">Vizualizando: {{ $certificado->getAttribute('certificate-title'); }}</h1>
         </div>
     </header>
@@ -45,7 +45,7 @@
                     </div>
                     <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-white">Data de conclusão do certificado</dt>
-                        <dd class="mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">{{ $certificado->getAttribute('certificate-date'); }}</dd>
+                        <dd class="mt-1 text-sm leading-6 text-gray-400 sm:col-span-2 sm:mt-0">{{date('d/m/Y', strtotime($certificado->getAttribute('certificate-date')))}}</dd>
                     </div>
                     <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt class="text-sm font-medium leading-6 text-white">URL da imagem do certificado</dt>

@@ -16,6 +16,7 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import Certificate from './components/Certificate.vue';
+import CertificateEdit from './components/CertificateEdit.vue';
 import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
 import Login from './components/Login.vue';
@@ -24,6 +25,7 @@ import ResetPassword from './components/ResetPassword.vue';
 import NotificationError from './components/notifications/Error.vue';
 
 app.component('certificate', Certificate);
+app.component('certificate-edit', CertificateEdit);
 app.component('navbar', Navbar);
 app.component('v-footer', Footer);
 app.component('login', Login);

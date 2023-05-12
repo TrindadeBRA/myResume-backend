@@ -18,7 +18,9 @@ class CertificadoController extends Controller
      */
     public function index()
     {
-        return "Fim!";
+        $user_id = auth()->user()->id;
+        $certificados = Certificado::where('user_id', $user_id)->get();
+        return view('certificado.index', ['certificados' => $certificados]);
     }
 
     /**
@@ -53,7 +55,12 @@ class CertificadoController extends Controller
      */
     public function edit(Certificado $certificado)
     {
-        //
+        $user_id = auth()->user()->id;
+        if($certificado->user_id == $user_id){
+            return view('certificado.edit', ["certificado" => $certificado]);
+        } else {
+            return view('certificado.acesso-negado');
+        }
     }
 
     /**
@@ -61,7 +68,13 @@ class CertificadoController extends Controller
      */
     public function update(Request $request, Certificado $certificado)
     {
-        //
+        $user_id = auth()->user()->id;
+        if($certificado->user_id == $user_id){
+            $certificado->update($request->all());
+            return redirect()->route('certificado.show', ['certificado' => $certificado->id]);
+        } else {
+            return view('certificado.acesso-negado');
+        }
     }
 
     /**
@@ -69,6 +82,13 @@ class CertificadoController extends Controller
      */
     public function destroy(Certificado $certificado)
     {
-        //
+        $user_id = auth()->user()->id;
+        if($certificado->user_id == $user_id){
+            $certificado->delete();
+            $certificados = Certificado::where('user_id', $user_id)->get();
+            return view('certificado.index', ['certificados' => $certificados]);
+        } else {
+            return view('certificado.acesso-negado');
+        }
     }
 }

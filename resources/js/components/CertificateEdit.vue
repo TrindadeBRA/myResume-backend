@@ -11,12 +11,14 @@
           
           <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             
-            <input type="hidden" name="_token" :value="certificateData.csrfToken">    
+            <input type="hidden" name="_token" :value="certificateData.csrfToken">
+            <input type="hidden" name="_method" value="PUT">
+
             <div class="sm:col-span-full">
               <label for="certificate-title" class="block text-sm font-medium leading-6 text-white">Título do certificado:</label>
               <div class="mt-2">
                 <div class="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 px-2 py-0">
-                  <input type="text" name="certificate-title" id="certificate-title" autocomplete="certificate-title" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." />
+                  <input type="text" name="certificate-title" id="certificate-title" autocomplete="certificate-title" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." :value="certificateData.certificateData['certificate-title']"/>
                 </div>
               </div>
             </div>
@@ -25,7 +27,7 @@
               <label for="certificate-origin" class="block text-sm font-medium leading-6 text-white">Instituição de Ensino</label>
               <div class="mt-2">
                 <div class="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 px-2 py-0">
-                  <input type="text" name="certificate-origin" id="certificate-origin" autocomplete="certificate-origin" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." />
+                  <input type="text" name="certificate-origin" id="certificate-origin" autocomplete="certificate-origin" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." :value="certificateData.certificateData['certificate-origin']"/>
                 </div>
               </div>
             </div>
@@ -35,7 +37,7 @@
               <label for="certificate-instructor" class="block text-sm font-medium leading-6 text-white">Professor / Instrutor</label>
               <div class="mt-2">
                 <div class="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 px-2 py-0">
-                  <input type="text" name="certificate-instructor" id="certificate-instructor" autocomplete="certificate-instructor" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." />
+                  <input type="text" name="certificate-instructor" id="certificate-instructor" autocomplete="certificate-instructor" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." :value="certificateData.certificateData['certificate-instructor']"/>
                 </div>
               </div>
             </div>
@@ -44,7 +46,7 @@
               <label for="certificate-date" class="block text-sm font-medium leading-6 text-white">Data de conclusão do certificado:</label>
               <div class="mt-2">
                 <div class="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 px-2 py-0">
-                  <input type="date" name="certificate-date" id="certificate-date" autocomplete="certificate-date" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." />
+                  <input type="date" name="certificate-date" id="certificate-date" autocomplete="certificate-date" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." :value="certificateData.certificateData['certificate-date']"/>
                 </div>
               </div>
             </div>
@@ -60,7 +62,7 @@
               <label for="certificate-url" class="block text-sm font-medium leading-6 text-white">URL da imagem do certificado:</label>
               <div class="mt-2">
                 <div class="flex rounded-md bg-white/5 ring-1 ring-inset ring-white/10 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 px-2 py-0">
-                  <input type="url" name="certificate-url" id="certificate-url" autocomplete="certificate-url" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." />
+                  <input type="url" name="certificate-url" id="certificate-url" autocomplete="certificate-url" class="flex-1 border-0 bg-transparent py-1.5 pl-1 text-white focus:ring-0 sm:text-sm sm:leading-6" placeholder="Digite aqui..." :value="certificateData.certificateData['certificate-url']"/>
                 </div>
               </div>
             </div>

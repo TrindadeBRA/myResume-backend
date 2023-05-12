@@ -124,7 +124,7 @@ const user = {
 }
 const navigation = [
   { name: 'Home', href: '/', current: true },
-  { name: 'Cadastrar Certificados', href: '/certificado/create', current: false },
+  { name: 'Certificados', href: '/certificado', current: false },
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
   { name: 'Reports', href: '#', current: false },
