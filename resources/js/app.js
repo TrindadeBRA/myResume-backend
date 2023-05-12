@@ -15,15 +15,17 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import DashboardTeste from './components/DashboardTeste.vue';
+import Certificate from './components/Certificate.vue';
 import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 import Login from './components/Login.vue';
 import Register from './components/Register.vue';
 import ResetPassword from './components/ResetPassword.vue';
 import NotificationError from './components/notifications/Error.vue';
 
-app.component('dashboard-teste', DashboardTeste);
+app.component('certificate', Certificate);
 app.component('navbar', Navbar);
+app.component('v-footer', Footer);
 app.component('login', Login);
 app.component('register', Register);
 app.component('reset-password', ResetPassword);

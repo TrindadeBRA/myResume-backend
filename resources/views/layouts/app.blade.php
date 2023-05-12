@@ -40,11 +40,13 @@
             <navbar :navbar-data="{{ json_encode($navbarData) }}"></navbar>
         @endauth
 
-
-
         <main class="">
             @yield('content')
         </main>
+
+        @auth
+            <v-footer></v-footer>
+        @endauth
     </div>
 </body>
 </html>
