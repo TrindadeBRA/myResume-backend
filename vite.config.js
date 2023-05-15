@@ -9,6 +9,9 @@ export default defineConfig({
                 'resources/sass/app.scss',
                 'resources/css/app.css',
                 'resources/js/app.js',
+                "./resources/**/*.blade.php",
+                "./resources/**/*.js",
+                "./resources/**/*.vue",
             ],
             refresh: true,
         }),
@@ -23,7 +26,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': '/resources/ts',
+            '@': '/resources/js',
         },
     },
 });
