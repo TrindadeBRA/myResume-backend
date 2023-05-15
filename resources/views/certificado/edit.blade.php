@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', 'Editar meu certificado - myResume Backend')
+
 
 @section('content')
     <header class="bg-gray-700 shadow">

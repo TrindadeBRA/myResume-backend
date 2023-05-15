@@ -17,6 +17,7 @@
 @endphp
 
 @extends('layouts.app')
+@section('title', 'Cadastre-se - myResume Backend')
 
 @section('content')
     <register :register-data="{{json_encode($registerData)}}"></register>

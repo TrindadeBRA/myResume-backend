@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Home - myResume Backend')
 
 @section('content')
 
@@ -18,36 +19,26 @@
                 <a href="{{route('certificado.index')}}" class="rounded-md bg-gray-700 cursor-pointer px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20">Ver todos</a>
             </div>
               
-
-            <div class="flex flex-wrap gap-8">
-
-                @foreach ($certificados as $key => $certificado)
-
-                    @if($loop->iteration > 5)
-                        @break
-                    @endif
-
-                    <a href="{{route('certificado.edit', $certificado['id'])}}" class="w-full sm:w-1/5">
-                        <img src="{{$certificado['certificate-url']}}" class="w-full pb-2 h-[170px] object-cover" alt="{{$certificado['certificate-title']}}" title="{{$certificado['certificate-title']}}" />
-                        <p class="text-white text-base font-medium overflow-hidden whitespace-nowrap overflow-ellipsis">{{$certificado['certificate-title']}}</p>
-                        <p class="text-white text-xs font-light">{{date('d/m/Y', strtotime($certificado['certificate-date']))}}</p>
-                    </a>
-
-
-                @endforeach
-
-              
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-4">
+                @if (count($certificados) > 0)
+                    @foreach ($certificados as $key => $certificado)
+                        @if($loop->iteration > 5)
+                            @break
+                        @endif
+                        <a href="{{route('certificado.edit', $certificado['id'])}}" class="flex flex-col">
+                            <img src="{{$certificado['certificate-url']}}" class="w-full pb-2 h-[170px] object-cover" alt="{{$certificado['certificate-title']}}" title="{{$certificado['certificate-title']}}" />
+                            <p class="text-white text-base font-medium overflow-hidden whitespace-nowrap overflow-ellipsis">{{$certificado['certificate-title']}}</p>
+                            <p class="text-white text-xs font-light">{{date('d/m/Y', strtotime($certificado['certificate-date']))}}</p>
+                        </a>
+                    @endforeach
+                @endif
             </div>
 
-
-
-
-              
-
-
-
+            @if(!count($certificados) > 0)
+                <p class="text-white text-base font-medium w-full">Ops... Parece que você ainda não cadastrou nenhum certificado.<p>
+            @endif
+            
         </div>
     </main>
-
 
 @endsection

@@ -17,6 +17,8 @@
 @endphp
 
 @extends('layouts.app')
+@section('title', 'Login - myResume Backend')
+
 
 @section('content')
     <login :login-data="{{json_encode($loginData)}}"></login>

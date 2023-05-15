@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Acesso negado! - myResume Backend')
 
 @section('content')
     <header class="bg-gray-700 shadow">
