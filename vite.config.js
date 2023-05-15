@@ -26,4 +26,8 @@ export default defineConfig({
             vue: 'vue/dist/vue.esm-bundler.js',
         },
     },
+    define: {
+        __APP_ENV__: process.env.VITE_VERCEL_ENV,
+    },
+    
 });
