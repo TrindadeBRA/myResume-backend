@@ -3,7 +3,7 @@
 @section('content')
     <header class="bg-gray-700 shadow">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <a href="{{ url()->previous(); }}" class="text-sm font-semibold leading-7 text-gray-300"><span aria-hidden="true">&larr;</span> Voltar a home</a>
+            <a href="{{ route('home') }}" class="text-sm font-semibold leading-7 text-gray-300"><span aria-hidden="true">&larr;</span> Voltar a home</a>
             <h1 class="text-3xl font-bold tracking-tight text-gray-300">Certificados</h1>
         </div>
     </header>

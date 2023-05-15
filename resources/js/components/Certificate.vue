@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+  <section class="mx-auto max-w-7xl py-6 px-6 lg:px-8">
     <form :action="certificateData.paths.actionForm" method="POST">
       <div class="space-y-12">
         <div class="border-b border-white/10 pb-12">

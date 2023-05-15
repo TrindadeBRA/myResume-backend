@@ -31,6 +31,7 @@
                 ],
                 "isLogged" => Auth::check(),
                 "userName" => (Auth::user() ? Auth::user()->name : false),
+                "userImage" => 'https://lucastrindade.dev/images/resource/lucastrindade.jpg',
                 "userEmail" => (Auth::user() ? Auth::user()->email : false),
                 "userId" => (Auth::user() ? Auth::user()->id : false),
                 "csrfToken" => csrf_token(),
